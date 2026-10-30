@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website portofolio Rachel Wirya Ananta">
+<title>Rachel Wirya Ananta | Portfolio</title>
+
+<style>
+:root {
+  --bg:#080b12;
+  --panel:#101725;
+  --panel2:#151f30;
+  --text:#f4f7fb;
+  --muted:#9aa8bb;
+  --blue:#69a7ff;
+  --cyan:#67e8f9;
+  --line:#253247;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:radial-gradient(ellipse at 80% 0%,#142747 0%,transparent 38%),var(--bg);
+  color:var(--text);
+  line-height:1.65;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap {
+  width:min(1100px,90%);
+  margin:auto;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#080b12df;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid #ffffff12;
+}
+
+nav {
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand {
+  font-weight:800;
+  letter-spacing:.5px;
+}
+
+.brand span {
+  color:var(--blue);
+}
+
+.links {
+  display:flex;
+  gap:25px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.links a:hover {
+  color:var(--cyan);
+}
+
+.hero {
+  min-height:590px;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;
+  gap:45px;
+  padding:75px 0;
+}
+
+.eyebrow {
+  color:var(--cyan);
+  font-size:.8rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+h1 {
+  font-size:clamp(2.8rem,7vw,5.4rem);
+  line-height:1.04;
+  margin:18px 0;
+  overflow-wrap:anywhere;
+}
+
+h1 span {
+  color:var(--blue);
+}
+
+.lead {
+  max-width:610px;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+
+.actions {
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn {
+  padding:12px 20px;
+  border-radius:9px;
+  font-weight:700;
+  border:1px solid var(--blue);
+  transition:.2s;
+}
+
+.primary {
+  background:var(--blue);
+  color:#06101f;
+}
+
+.btn:hover {
+  transform:translateY(-3px);
+}
+
+.outline {
+  color:var(--text);
+}
+
+/* FOTO PROFIL */
+
+.portrait {
+  height:350px;
+  border:1px solid #385071;
+  border-radius:28px;
+  background:linear-gradient(145deg,#1d3558,#101725 65%);
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.portrait:before,
+.portrait:after {
+  content:"";
+  position:absolute;
+  border:1px solid #78b7ff40;
+  border-radius:50%;
+  width:260px;
+  height:260px;
+  pointer-events:none;
+}
+
+.portrait:after {
+  width:340px;
+  height:340px;
+}
+
+.profile-photo {
+  z-index:1;
+  width:210px;
+  height:245px;
+  object-fit:cover;
+  border-radius:22px;
+  border:3px solid #78b7ff;
+  box-shadow:0 15px 60px #0008;
+}
+
+.portrait small {
+  position:absolute;
+  bottom:15px;
+  color:#c4d5eb;
+  letter-spacing:2px;
+  font-size:.7rem;
+  z-index:2;
+}
+
+section {
+  padding:80px 0;
+  border-top:1px solid #ffffff10;
+}
+
+.section-label {
+  color:var(--cyan);
+  font-size:.75rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+h2 {
+  font-size:clamp(2rem,4vw,3rem);
+  margin:8px 0 28px;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:35px;
+}
+
+.about-copy {
+  color:var(--muted);
+  max-width:650px;
+}
+
+.facts {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.fact,
+.card {
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:20px;
+}
+
+.fact b {
+  display:block;
+  color:var(--blue);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.fact span {
+  font-weight:600;
+}
+
+/* KEAHLIAN */
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.card .number {
+  color:var(--cyan);
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.card h3 {
+  margin:10px 0 7px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:17px;
+}
+
+.tag {
+  font-size:.78rem;
+  color:#c9dcf5;
+  background:#263a56;
+  padding:5px 10px;
+  border-radius:20px;
+}
+
+/* ACHIEVEMENT */
+
+.achievement {
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+}
+
+.medal {
+  font-size:1.6rem;
+  background:#263a56;
+  border-radius:12px;
+  padding:12px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.contact-item {
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--panel);
+  min-width:0;
+}
+
+.contact-item small {
+  display:block;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.contact-item a {
+  color:var(--blue);
+  overflow-wrap:anywhere;
+}
+
+.contact-item a:hover {
+  color:var(--cyan);
+  text-decoration:underline;
+}
+
+footer {
+  padding:28px 0;
+  color:var(--muted);
+  font-size:.85rem;
+  text-align:center;
+  border-top:1px solid #ffffff10;
+}
+
+/* TAMPILAN HP */
+
+@media(max-width:760px) {
+  .links {
+    gap:12px;
+    font-size:.8rem;
+    flex-wrap:wrap;
+  }
+
+  .hero,
+  .about-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero {
+    padding:60px 0;
+  }
+
+  .portrait {
+    height:300px;
+  }
+
+  .cards {
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:430px) {
+  nav {
+    height:auto;
+    padding:16px 0;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .facts {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .profile-photo {
+    width:190px;
+    height:225px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#home">
+      Rachel Wirya Ananta<span>.</span>
+    </a>
+
+    <div class="links">
+      <a href="#work">Keahlian</a>
+      <a href="#about">Tentang</a>
+      <a href="#achievement">Pencapaian</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HALAMAN AWAL -->
+
+<div class="wrap hero" id="home">
+
+  <div>
+    <div class="eyebrow">
+      Mahasiswa · Digital Creative
+    </div>
+
+    <h1>
+      Halo, saya<br>
+      <span>Rachel Wirya Ananta</span>
+    </h1>
+
+    <p class="lead">
+      Mahasiswa Pendidikan Teknologi Informasi yang tertarik
+      pada desain digital, editing video, teknologi, dan
+      pengembangan kreativitas. Saya senang belajar hal baru
+      dan mengubah ide menjadi karya.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#contact">
+        Hubungi Saya
+      </a>
+
+      <a class="btn outline" href="#work">
+        Lihat Keahlian
+      </a>
+    </div>
+  </div>
+
+  <!-- FOTO PROFIL -->
+  <div class="portrait">
+
+    <img
+      src="images/foto-profil.jpg"
+      alt="Foto profil Rachel Wirya Ananta"
+      class="profile-photo"
+    >
+
+    <small>
+      CREATIVE · CURIOUS · GROWING
+    </small>
+
+  </div>
+
+</div>
+
+
+<!-- ABOUT ME -->
+
+<section id="about">
+<div class="wrap">
+
+  <div class="section-label">
+    01 / About Me
+  </div>
+
+  <h2>Mengenal saya lebih dekat.</h2>
+
+  <div class="about-grid">
+
+    <p class="about-copy">
+      Saya adalah mahasiswa yang sedang mengembangkan
+      kemampuan di bidang teknologi informasi dan
+      kreativitas digital. Saya percaya bahwa proses
+      belajar, konsistensi, dan keberanian mencoba
+      merupakan bagian penting untuk terus berkembang.
+      Saat ini saya berfokus meningkatkan kemampuan
+      desain, komunikasi, dan kerja sama tim.
+    </p>
+
+    <div class="facts">
+
+      <div class="fact">
+        <b>Nama</b>
+        <span>Rachel Wirya Ananta</span>
+      </div>
+
+      <div class="fact">
+        <b>NIM</b>
+        <span>26050974123</span>
+      </div>
+
+      <div class="fact">
+        <b>Program Studi</b>
+        <span>Pendidikan Teknologi Informasi</span>
+      </div>
+
+      <div class="fact">
+        <b>Pendidikan</b>
+        <span>SMA Negeri 1 Soko · 2026</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<!-- WHAT I CAN DO -->
+
+<section id="work">
+<div class="wrap">
+
+  <div class="section-label">
+    02 / What I Can Do
+  </div>
+
+  <h2>Keahlian yang terus saya kembangkan.</h2>
+
+  <div class="cards">
+
+    <article class="card">
+
+      <div class="number">
+        01 — DESIGN
+      </div>
+
+      <h3>Desain Grafis</h3>
+
+      <p>
+        Membuat desain visual untuk kebutuhan tugas,
+        presentasi, poster, dan konten digital.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Canva</span>
+        <span class="tag">Layout</span>
+        <span class="tag">Visual</span>
+      </div>
+
+    </article>
+
+    <article class="card">
+
+      <div class="number">
+        02 — VIDEO
+      </div>
+
+      <h3>Editing Video</h3>
+
+      <p>
+        Menyusun klip, teks, transisi, dan audio
+        menjadi video yang komunikatif.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Video Editing</span>
+        <span class="tag">Storytelling</span>
+      </div>
+
+    </article>
+
+    <article class="card">
+
+      <div class="number">
+        03 — TEAMWORK
+      </div>
+
+      <h3>Kerja Sama Tim</h3>
+
+      <p>
+        Berkoordinasi, membagi tugas, dan menyampaikan
+        ide saat mengerjakan proyek kelompok.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Komunikasi</span>
+        <span class="tag">Kolaborasi</span>
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+</section>
+
+
+<!-- ACHIEVEMENT -->
+
+<section id="achievement">
+<div class="wrap">
+
+  <div class="section-label">
+    03 / Achievement
+  </div>
+
+  <h2>Pengalaman dan pencapaian.</h2>
+
+  <article class="card achievement">
+
+    <div class="medal">
+      🏆
+    </div>
+
+    <div>
+
+      <div class="number">
+        PENGALAMAN TIM · TUBAN
+      </div>
+
+      <h3>Juara 3 Turnamen Free Fire</h3>
+
+      <p>
+        Pengalaman mengikuti turnamen bersama tim.
+        Proses latihan, pembagian role, dan penyusunan
+        strategi menjadi pelajaran tentang komunikasi,
+        disiplin, serta kerja sama.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Esports</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Strategi</span>
+      </div>
+
+    </div>
+
+  </article>
+
+  <p style="color:var(--muted);margin-top:15px;font-size:.85rem">
+    Tambahkan tahun, nama penyelenggara, dan dokumentasi/foto jika tersedia.
+  </p>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="wrap">
+
+  <div class="section-label">
+    04 / Contact
+  </div>
+
+  <h2>Mari terhubung.</h2>
+
+  <p class="about-copy" style="margin-bottom:22px">
+    Punya ide, proyek, atau ingin berdiskusi?
+    Silakan hubungi saya melalui kontak berikut.
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-item">
+      <small>EMAIL</small>
+      <a href="mailto:chellsajaaa20@gmail.com">
+        chellsajaaa20@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <small>GITHUB</small>
+      <a href="https://github.com/chellsajaaa"
+         target="_blank"
+         rel="noopener noreferrer">
+        github.com/chellsajaaa ↗
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <small>LINKEDIN</small>
+      <a href="https://www.linkedin.com/in/rachel-wirya-ananta-99ba0b440"
+         target="_blank"
+         rel="noopener noreferrer">
+        Profil LinkedIn Rachel ↗
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <small>CV / RESUME</small>
+      <a href="https://drive.google.com/file/d/1OcChT9c2PGt9dyW8pj1YZgHPwwGgNohR/view?usp=drive_link"
+         target="_blank"
+         rel="noopener noreferrer">
+        Download CV Saya ↗
+      </a>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span>
+  Rachel Wirya Ananta. Dibuat sebagai portofolio pribadi.
+</footer>
+
+<script>
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
